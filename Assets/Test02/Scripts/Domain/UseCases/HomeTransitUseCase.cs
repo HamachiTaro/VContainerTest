@@ -13,14 +13,17 @@ namespace Test02.Scripts.Domain.UseCases
     /// </summary>
     public class HomeTransitUseCase : IUseCase
     {
+        private readonly ICommonFadeScreenPresenter _fadeScreenPresenter;
         private readonly IHomeUIController _uiController;
         private readonly CancellationToken _token;
 
         public HomeTransitUseCase(
             IHomeUIController uiController,
+            ICommonFadeScreenPresenter fadeScreenPresenter,
             CancellationToken token)
         {
             _uiController = uiController;
+            _fadeScreenPresenter = fadeScreenPresenter;
             _token = token;
         }
 
@@ -39,6 +42,7 @@ namespace Test02.Scripts.Domain.UseCases
                 .ForEachAwaitAsync(async _ =>
                 {
                     Debug.Log("click to game");
+                    await _fadeScreenPresenter.ShowAsync();
                     // await SceneManager.LoadSceneAsync("");
                 }, _token);
         }

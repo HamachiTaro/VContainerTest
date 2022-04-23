@@ -13,6 +13,7 @@ namespace Test02.Scripts.Main.SceneMain
 {
     public class HomeSceneMain : IInitializable, IAsyncStartable, IDisposable
     {
+        private readonly ICommonFadeScreenPresenter _fadeScreenPresenter;
         private readonly IHomeUIController _uiController;
 
         private CancellationTokenSource _cts;
@@ -20,10 +21,12 @@ namespace Test02.Scripts.Main.SceneMain
 
         [Inject]
         public HomeSceneMain(
+            ICommonFadeScreenPresenter fadeScreenPresenter,
             IHomeUIController uiController)
         {
             Debug.Log("HomeSceneMain Constructor");
 
+            _fadeScreenPresenter = fadeScreenPresenter;
             _uiController = uiController;
 
             _cts = new CancellationTokenSource();
@@ -41,7 +44,10 @@ namespace Test02.Scripts.Main.SceneMain
             Debug.Log("*** Initialize ***");
             var token = _cts.Token;
 
-            var transitUseCase = new HomeTransitUseCase(_uiController, token);
+            var transitUseCase = new HomeTransitUseCase(
+                _uiController,
+                _fadeScreenPresenter,
+                token);
             _useCases.Add(transitUseCase);
         }
 
