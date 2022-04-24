@@ -18,7 +18,6 @@ namespace Test02.Scripts.LifetimeScope
             builder.RegisterComponent<IHomeUIController>(_homeUIController);
             builder.RegisterComponent<ICommonFadeScreenPresenter>(_fadeScreenPresenter);
             
-            
             builder.RegisterEntryPoint<HomeSceneMain>();
         }
     }

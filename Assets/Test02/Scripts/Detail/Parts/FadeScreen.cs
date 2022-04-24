@@ -8,23 +8,20 @@ namespace Test02.Scripts.Detail.Parts
 {
     public class FadeScreen : MonoBehaviour
     {
+        [SerializeField] private Color _color;
         [SerializeField] private Image image;
 
         private CancellationToken _token;
-
-        private Color _color;
-
+        
         private void Awake()
         {
+            Debug.Log("FadeScreen.Awake");
             _token = this.GetCancellationTokenOnDestroy();
-            _color = image.color;
-            
-            gameObject.SetActive(false);
         }
 
         public async UniTask ShowAsync()
         {
-            Debug.Log("start show");
+            Debug.Log("FadeScreen.ShowAsync");
             gameObject.SetActive(true);
             image.color = new Color(_color.r, _color.g, _color.b, 0f);
 
@@ -41,12 +38,15 @@ namespace Test02.Scripts.Detail.Parts
 
         public void Show()
         {
+            Debug.Log("FadeScreen.Show");
             gameObject.SetActive(true);
             image.color = _color;
         }
 
         public async UniTask HideAsync()
         {
+            Debug.Log("FadeScreen.HideAsync");
+            gameObject.SetActive(true);
             image.color = _color;
 
             float alpha = 1f;
@@ -62,6 +62,7 @@ namespace Test02.Scripts.Detail.Parts
         
         public void Hide()
         {
+            Debug.Log("FadeScreen.Hide");
             image.color = new Color(_color.r, _color.g, _color.b, 0f);
             gameObject.SetActive(false);
         }

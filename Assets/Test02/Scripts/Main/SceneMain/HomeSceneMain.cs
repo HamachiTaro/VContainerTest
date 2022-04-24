@@ -6,6 +6,7 @@ using Test02.Scripts.CA;
 using Test02.Scripts.Domain.Interfaces;
 using Test02.Scripts.Domain.UseCases;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
 
@@ -18,6 +19,8 @@ namespace Test02.Scripts.Main.SceneMain
 
         private CancellationTokenSource _cts;
         private List<IUseCase> _useCases = new List<IUseCase>();
+
+        private HomeTransitUseCase _transitUseCase;
 
         [Inject]
         public HomeSceneMain(
@@ -44,22 +47,24 @@ namespace Test02.Scripts.Main.SceneMain
             Debug.Log("*** Initialize ***");
             var token = _cts.Token;
 
-            var transitUseCase = new HomeTransitUseCase(
-                _uiController,
-                _fadeScreenPresenter,
-                token);
-            _useCases.Add(transitUseCase);
-        }
-
-        public async UniTask StartAsync(CancellationToken cancellation)
-        {
-            Debug.Log("*** StartAsync ***");
-            await UniTask.Yield(cancellation);
+            _transitUseCase = new HomeTransitUseCase(_uiController, token);
+            _useCases.Add(_transitUseCase);
 
             foreach (var useCase in _useCases)
             {
                 useCase.Begin();
             }
+        }
+
+        public async UniTask StartAsync(CancellationToken cancellation)
+        {
+            Debug.Log("*** StartAsync ***");
+
+            await _transitUseCase.TransitSelectAsync();
+
+            await _fadeScreenPresenter.ShowAsync();
+
+            await SceneManager.LoadSceneAsync("Game").WithCancellation(_cts.Token);
         }
     }
 }

@@ -8,13 +8,10 @@ namespace Test02.Scripts.Detail
     public class HomeUIController : MonoBehaviour, IHomeUIController
     {
         [SerializeField] private Button buttonGame;
-
-        public IUniTaskAsyncEnumerable<AsyncUnit> OnClickToGameAsync()
+        
+        public async UniTask OnClickToGameAsync()
         {
-            Debug.Log(buttonGame);
-            Debug.Log(buttonGame.OnClickAsAsyncEnumerable());
-            
-            return buttonGame.OnClickAsAsyncEnumerable();
+            await buttonGame.OnClickAsync();
         }
     }
 }
