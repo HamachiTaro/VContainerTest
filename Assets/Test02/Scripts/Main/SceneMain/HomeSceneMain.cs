@@ -17,8 +17,8 @@ namespace Test02.Scripts.Main.SceneMain
         private readonly ICommonFadeScreenPresenter _fadeScreenPresenter;
         private readonly IHomeUIController _uiController;
 
-        private CancellationTokenSource _cts;
-        private List<IUseCase> _useCases = new List<IUseCase>();
+        private readonly CancellationTokenSource _cts;
+        private readonly List<IUseCase> _useCases = new List<IUseCase>();
 
         private HomeTransitUseCase _transitUseCase;
 
