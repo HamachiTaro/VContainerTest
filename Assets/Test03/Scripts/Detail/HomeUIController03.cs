@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Test03.Scripts.Detail
 {
-    public class HomeUIController : MonoBehaviour, IHomeUIController
+    public class HomeUIController03 : MonoBehaviour, IHomeUIController03
     {
         [SerializeField] private Button buttonGame;
         

@@ -10,15 +10,15 @@ namespace Test03.Scripts.Domain.UseCases
     /// </summary>
     public class HomeTransitUseCase
     {
-        private readonly IHomeUIController _uiController;
+        private readonly IHomeUIController03 _uiController03;
         // private readonly CancellationToken _token;
 
         [Inject]
         public HomeTransitUseCase(
-            IHomeUIController uiController
+            IHomeUIController03 uiController03
         )
         {
-            _uiController = uiController;
+            _uiController03 = uiController03;
             // _token = token;
         }
 
@@ -37,7 +37,7 @@ namespace Test03.Scripts.Domain.UseCases
 
         public async UniTask TransitSelectAsync()
         {
-            await _uiController.OnClickToGameAsync();
+            await _uiController03.OnClickToGameAsync();
         }
     }
 }

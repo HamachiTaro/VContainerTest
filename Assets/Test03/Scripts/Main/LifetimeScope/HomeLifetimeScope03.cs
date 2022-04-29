@@ -9,7 +9,7 @@ namespace Test03.Scripts.LifetimeScope
 {
     public class HomeLifetimeScope03 : VContainer.Unity.LifetimeScope
     {
-        // [SerializeField] private HomeUIController homeUIController;
+        [SerializeField] private HomeUIController03 homeUIController;
         [SerializeField] private CommonFadeScreenPresenter03 fadeScreenPresenter03;
         [SerializeField] private CommonSceneNamePresenter03 sceneNamePresenter03;
         
@@ -17,7 +17,7 @@ namespace Test03.Scripts.LifetimeScope
         {
             base.Configure(builder);
 
-            // builder.RegisterComponent<IHomeUIController>(homeUIController);
+            builder.RegisterComponent<IHomeUIController03>(homeUIController);
             builder.RegisterComponent<ICommonFadeScreenPresenter03>(fadeScreenPresenter03);
             builder.RegisterComponent<ICommonSceneNamePresenter03>(sceneNamePresenter03);
 

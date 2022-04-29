@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 319734740}
   - component: {fileID: 319734739}
   - component: {fileID: 319734742}
+  - component: {fileID: 319734743}
   m_Layer: 0
   m_Name: LifetimeScope
   m_TagString: Untagged
@@ -382,6 +383,7 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+  homeUIController: {fileID: 319734743}
   fadeScreenPresenter03: {fileID: 319734742}
   sceneNamePresenter03: {fileID: 319734739}
 --- !u!4 &319734741
@@ -411,6 +413,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 151616494}
+--- !u!114 &319734743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319734738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3646a1ada8dd64ea08bd0a35d3e23233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonGame: {fileID: 129214756}
 --- !u!1 &1066584609
 GameObject:
   m_ObjectHideFlags: 0
