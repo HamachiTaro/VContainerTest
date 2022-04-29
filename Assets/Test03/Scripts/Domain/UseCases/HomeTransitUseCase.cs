@@ -1,27 +1,25 @@
 using System.Threading;
-using Codice.Client.BaseCommands;
 using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.Linq;
-using Test03.Scripts.CA;
 using Test03.Scripts.Domain.Interfaces;
-using UnityEngine;
+using VContainer;
 
 namespace Test03.Scripts.Domain.UseCases
 {
     /// <summary>
     /// HomeからGameへの遷移管理
     /// </summary>
-    public class HomeTransitUseCase : IUseCase
+    public class HomeTransitUseCase
     {
         private readonly IHomeUIController _uiController;
-        private readonly CancellationToken _token;
+        // private readonly CancellationToken _token;
 
+        [Inject]
         public HomeTransitUseCase(
-            IHomeUIController uiController,
-            CancellationToken token)
+            IHomeUIController uiController
+        )
         {
             _uiController = uiController;
-            _token = token;
+            // _token = token;
         }
 
         public void Dispose()

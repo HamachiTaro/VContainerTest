@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Test03.Scripts.Detail
 {
-    public class CommonSceneNamePresenter : MonoBehaviour, ICommonSceneNamePresenter
+    public class CommonSceneNamePresenter03 : MonoBehaviour, ICommonSceneNamePresenter03
     {
         [SerializeField] private TextMeshProUGUI tmProSceneName;
         
