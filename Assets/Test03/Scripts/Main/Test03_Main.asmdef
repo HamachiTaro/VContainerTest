@@ -1,0 +1,20 @@
+{
+    "name": "Test03_Main",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:55d9c8670601441129cdc9251025e60b",
+        "GUID:0fe332385e6b64122adac1409b850339",
+        "GUID:62631c0055cf34b7bb8126099bd26ae4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
