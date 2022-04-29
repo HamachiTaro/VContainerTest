@@ -123,50 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &543586940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 543586942}
-  - component: {fileID: 543586941}
-  m_Layer: 0
-  m_Name: FadeScreen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &543586941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543586940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7677f4e5566040ae9defb034d847e92f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeScreen: {fileID: 1542771497}
---- !u!4 &543586942
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543586940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 786484053}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778197966
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 786484053}
   - component: {fileID: 786484052}
+  - component: {fileID: 786484054}
+  - component: {fileID: 786484055}
   m_Layer: 0
   m_Name: LifetimeScope
   m_TagString: Untagged
@@ -294,14 +252,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 786484051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5bcbd6dc9864fad92142a60785a0c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d35d7ae75a1c494d97f72d8454bd904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
-  _fadeScreenPresenter: {fileID: 543586941}
+  fadeScreenPresenter03: {fileID: 786484054}
+  sceneNamePresenter03: {fileID: 786484055}
 --- !u!4 &786484053
 Transform:
   m_ObjectHideFlags: 0
@@ -312,11 +271,36 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 543586942}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786484054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786484051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295f7a936d5da4713bc5f96aee7f6e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen03: {fileID: 1542771497}
+--- !u!114 &786484055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786484051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f03f9e51204b878daff8ff2325d52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmProSceneName: {fileID: 1306732881}
 --- !u!1 &1306732879
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1542771496
 RectTransform:
   m_ObjectHideFlags: 0
@@ -591,7 +575,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1542771495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acdb3827cff64858be0f895832bef15f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b1b12ad701774050809bcd56eaf90f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 0.427451, g: 0.9843138, b: 1, a: 1}

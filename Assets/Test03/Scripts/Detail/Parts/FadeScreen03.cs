@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Test03.Scripts.Detail.Parts
 {
-    public class FadeScreen : MonoBehaviour
+    public class FadeScreen03 : MonoBehaviour
     {
         [SerializeField] private Color _color;
         [SerializeField] private Image image;
