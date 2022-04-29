@@ -34,7 +34,7 @@ namespace Test03.Scripts.Domain.UseCases
             await UniTask.Delay(1000, cancellationToken: cancellation);
             await _fadeScreenPresenter.HideAsync();
 
-            Debug.Log("boo");
+            
         }
     }
 }

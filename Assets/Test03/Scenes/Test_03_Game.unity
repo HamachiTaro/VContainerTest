@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &653264579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653264580}
+  m_Layer: 0
+  m_Name: CubeContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653264580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653264579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778197966
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +247,7 @@ RectTransform:
   - {fileID: 1306732880}
   - {fileID: 1542771496}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -236,6 +266,7 @@ GameObject:
   - component: {fileID: 786484052}
   - component: {fileID: 786484054}
   - component: {fileID: 786484055}
+  - component: {fileID: 786484056}
   m_Layer: 0
   m_Name: LifetimeScope
   m_TagString: Untagged
@@ -261,6 +292,7 @@ MonoBehaviour:
   autoInjectGameObjects: []
   fadeScreenPresenter03: {fileID: 786484054}
   sceneNamePresenter03: {fileID: 786484055}
+  gameObjectPresenter: {fileID: 786484056}
 --- !u!4 &786484053
 Transform:
   m_ObjectHideFlags: 0
@@ -273,7 +305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &786484054
 MonoBehaviour:
@@ -301,6 +333,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmProSceneName: {fileID: 1306732881}
+--- !u!114 &786484056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786484051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b2e872d7474ff59824202c1d160483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5157771643922165767, guid: 4a94e6370ee5247c5b2b55015b05289c, type: 3}
+  container: {fileID: 653264580}
 --- !u!1 &1306732879
 GameObject:
   m_ObjectHideFlags: 0
