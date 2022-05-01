@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Test03.Scripts.Domain.Interfaces;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Test03.Scripts.Detail
 {
@@ -30,7 +29,6 @@ namespace Test03.Scripts.Detail
         public async UniTask OnCreatedAsync()
         {
             await UniTask.WaitUntil(() => _isCreated);
-            Debug.Log("Created!!!!!!!");
         }
 
         private async UniTask CreateInternalAsync(int count)
@@ -41,7 +39,7 @@ namespace Test03.Scripts.Detail
 
             while (true)
             {
-                var go = GameObject.Instantiate(prefab, Random.insideUnitSphere * 5f, Quaternion.identity, container);
+                var go = GameObject.Instantiate(prefab, UnityEngine.Random.insideUnitSphere * 5f, Quaternion.identity, container);
                 go.transform.localScale = Vector3.one * 0.1f;
                 _objectPool.Add(go);
                 if (_objectPool.Count == count)
@@ -63,6 +61,7 @@ namespace Test03.Scripts.Detail
 
         public void Dispose()
         {
+            // Debug.Log($"Dispose : {this}");
             _objectPool.Clear();
         }
     }

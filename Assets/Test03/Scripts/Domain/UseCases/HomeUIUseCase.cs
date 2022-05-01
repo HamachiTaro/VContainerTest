@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Test03.Scripts.Domain.Interfaces;
@@ -11,7 +12,7 @@ namespace Test03.Scripts.Domain.UseCases
     /// <summary>
     /// HomeSceneのUI周りのUseCase
     /// </summary>
-    public class HomeUIUseCase : IAsyncStartable
+    public class HomeUIUseCase : IAsyncStartable, IDisposable
     {
         private readonly ICommonFadeScreenPresenter03 _fadeScreenPresenter;
         private readonly ICommonSceneNamePresenter03 _sceneNamePresenter;
@@ -37,7 +38,7 @@ namespace Test03.Scripts.Domain.UseCases
         {
             _sceneNamePresenter.Show("HOME...");
             _fadeScreenPresenter.Show();
-            await UniTask.Delay(2000, cancellationToken: cancellation);
+            await UniTask.Delay(500, cancellationToken: cancellation);
             
             await _fadeScreenPresenter.HideAsync();
             await _homeUIController03.OnClickToGameAsync();

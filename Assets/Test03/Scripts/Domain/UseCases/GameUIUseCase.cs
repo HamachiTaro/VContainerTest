@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Test03.Scripts.Domain.Interfaces;
@@ -8,7 +9,7 @@ using VContainer.Unity;
 
 namespace Test03.Scripts.Domain.UseCases
 {
-    public class GameUIUseCase : IAsyncStartable
+    public class GameUIUseCase : IAsyncStartable, IDisposable
     {
         private readonly ICommonFadeScreenPresenter03 _fadeScreenPresenter;
         private readonly ICommonSceneNamePresenter03 _sceneNamePresenter;

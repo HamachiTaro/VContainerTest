@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Test03.Scripts.Domain.Interfaces;
@@ -7,7 +8,7 @@ using VContainer.Unity;
 
 namespace Test03.Scripts.Domain.UseCases
 {
-    public class GameGameUseCase : IAsyncStartable
+    public class GameGameUseCase : IAsyncStartable, IDisposable
     {
         private readonly IGameObjectPresenter _objectPresenter;
 
@@ -25,8 +26,6 @@ namespace Test03.Scripts.Domain.UseCases
 
         public async UniTask StartAsync(CancellationToken cancellation)
         {
-            // await _objectPresenter.CreateAsync(3000);
-            
             Debug.Log("Create");
             _objectPresenter.Create(3000);
         }
