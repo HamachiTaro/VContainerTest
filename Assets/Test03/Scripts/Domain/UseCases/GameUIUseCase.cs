@@ -11,15 +11,18 @@ namespace Test03.Scripts.Domain.UseCases
     {
         private readonly ICommonFadeScreenPresenter03 _fadeScreenPresenter;
         private readonly ICommonSceneNamePresenter03 _sceneNamePresenter;
+        private readonly IGameObjectPresenter _objectPresenter;
         
         [Inject]
         public GameUIUseCase(
             ICommonFadeScreenPresenter03 fadeScreenPresenter,
-            ICommonSceneNamePresenter03 sceneNamePresenter
+            ICommonSceneNamePresenter03 sceneNamePresenter,
+            IGameObjectPresenter objectPresenter
         )
         {
             _fadeScreenPresenter = fadeScreenPresenter;
             _sceneNamePresenter = sceneNamePresenter;
+            _objectPresenter = objectPresenter;
         }
 
         public void Dispose()
@@ -31,10 +34,9 @@ namespace Test03.Scripts.Domain.UseCases
         {
             _sceneNamePresenter.Show("GAME");
             _fadeScreenPresenter.Show();
-            await UniTask.Delay(1000, cancellationToken: cancellation);
-            await _fadeScreenPresenter.HideAsync();
-
             
+            await _objectPresenter.OnCreatedAsync();
+            await _fadeScreenPresenter.HideAsync();
         }
     }
 }
