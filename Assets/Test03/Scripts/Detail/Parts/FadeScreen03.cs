@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -15,13 +14,12 @@ namespace Test03.Scripts.Detail.Parts
 
         private void Awake()
         {
-            Debug.Log("FadeScreen.Awake");
             _token = this.GetCancellationTokenOnDestroy();
         }
 
         public async UniTask ShowAsync()
         {
-            Debug.Log("FadeScreen.ShowAsync");
+            // Debug.Log("FadeScreen.ShowAsync");
             gameObject.SetActive(true);
             image.color = new Color(_color.r, _color.g, _color.b, 0f);
 
@@ -38,14 +36,14 @@ namespace Test03.Scripts.Detail.Parts
 
         public void Show()
         {
-            Debug.Log("FadeScreen.Show");
+            // Debug.Log("FadeScreen.Show");
             gameObject.SetActive(true);
             image.color = _color;
         }
 
         public async UniTask HideAsync()
         {
-            Debug.Log("FadeScreen.HideAsync");
+            // Debug.Log("FadeScreen.HideAsync");
             gameObject.SetActive(true);
             image.color = _color;
 
@@ -62,7 +60,7 @@ namespace Test03.Scripts.Detail.Parts
 
         public void Hide()
         {
-            Debug.Log("FadeScreen.Hide");
+            // Debug.Log("FadeScreen.Hide");
             image.color = new Color(_color.r, _color.g, _color.b, 0f);
             gameObject.SetActive(false);
         }

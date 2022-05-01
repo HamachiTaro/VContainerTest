@@ -12,7 +12,7 @@ namespace Test03.Scripts.LifetimeScope
         [SerializeField] private HomeUIController03 homeUIController;
         [SerializeField] private CommonFadeScreenPresenter03 fadeScreenPresenter03;
         [SerializeField] private CommonSceneNamePresenter03 sceneNamePresenter03;
-        
+
         protected override void Configure(IContainerBuilder builder)
         {
             base.Configure(builder);

@@ -12,6 +12,7 @@ namespace Test03.Scripts.LifetimeScope
         [SerializeField] private CommonFadeScreenPresenter03 fadeScreenPresenter03;
         [SerializeField] private CommonSceneNamePresenter03 sceneNamePresenter03;
         [SerializeField] private GameGameObjectPresenter gameObjectPresenter;
+        [SerializeField] private GameUIController gameUIController;
         
         protected override void Configure(IContainerBuilder builder)
         {
@@ -20,6 +21,7 @@ namespace Test03.Scripts.LifetimeScope
             builder.RegisterComponent<ICommonFadeScreenPresenter03>(fadeScreenPresenter03);
             builder.RegisterComponent<ICommonSceneNamePresenter03>(sceneNamePresenter03);
             builder.RegisterComponent<IGameObjectPresenter>(gameObjectPresenter);
+            builder.RegisterComponent<IGameUIController>(gameUIController);
             
             // entry point...
             builder.RegisterEntryPoint<GameUIUseCase>();
