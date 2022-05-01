@@ -25,9 +25,10 @@ namespace Test03.Scripts.Domain.UseCases
 
         public async UniTask StartAsync(CancellationToken cancellation)
         {
-            await _objectPresenter.CreateAsync(3000);
+            // await _objectPresenter.CreateAsync(3000);
             
-            // todo このタイミングでui側にfadeするように通知したい message pipe?
+            Debug.Log("Create");
+            _objectPresenter.Create(3000);
         }
     }
 }

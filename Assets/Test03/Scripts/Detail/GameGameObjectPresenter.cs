@@ -12,12 +12,25 @@ namespace Test03.Scripts.Detail
         [SerializeField] private GameObject prefab;
         [SerializeField] private Transform container;
         private List<GameObject> _objectPool;
-
+        private bool _isCreated;
+        
         public async UniTask CreateAsync(int count)
         {
             _objectPool = new List<GameObject>(count);
-
             await CreateInternalAsync(count);
+        }
+
+        public void Create(int count)
+        {
+            _objectPool = new List<GameObject>(count);
+            _isCreated = false;
+            CreateInternalAsync(count).Forget();
+        }
+
+        public async UniTask OnCreatedAsync()
+        {
+            await UniTask.WaitUntil(() => _isCreated);
+            Debug.Log("Created!!!!!!!");
         }
 
         private async UniTask CreateInternalAsync(int count)
@@ -39,10 +52,13 @@ namespace Test03.Scripts.Detail
                 elapsedSec += Time.deltaTime;
                 if (elapsedSec > timeLimitPerFrame)
                 {
+                    // Debug.Log("next frame...");
                     elapsedSec = 0f;
                     await UniTask.Yield();
                 }
             }
+
+            _isCreated = true;
         }
 
         public void Dispose()
