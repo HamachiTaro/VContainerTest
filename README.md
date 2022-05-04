@@ -9,4 +9,5 @@ VContainerを使ってみる
 - シーンをエントリーポイントに設定した
 
 ## TEST3
-UseCaseをエントリーポイントにする予定
+- UseCaseをエントリーポイントに設定
+- Presenter, ControllerはMonoBehaviourを継承
